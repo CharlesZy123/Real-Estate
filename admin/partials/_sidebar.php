@@ -38,7 +38,7 @@ function echoActiveClass($requestUri)
                </a>
             </li>
             <li class="nav-item">
-               <a href="#" class="nav-link <?= echoActiveClass('vacancy')?>">
+               <a href="vacancy" class="nav-link <?= echoActiveClass('vacancy')?>">
                   <i class="nav-icon fa fa-id-card mr-2" aria-hidden="true"></i>
                   <p>
                      Vacancy
@@ -47,7 +47,7 @@ function echoActiveClass($requestUri)
                </a>
             </li>
             <li class="nav-item">
-               <a href="#" class="nav-link <?= echoActiveClass('employee')?>">
+               <a href="employee" class="nav-link <?= echoActiveClass('employee')?>">
                   <i class="nav-icon fa fa-users mr-2" aria-hidden="true"></i>
                   <p>
                      Employee
