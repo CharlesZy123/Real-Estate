@@ -1,7 +1,8 @@
 <?php include('partials/_header.php');
+require('../db/dbconn.php');
+include('partials/_session.php');
 include('partials/_navbar.php');
 include('partials/_sidebar.php');
-require('../db/dbconn.php');
 ?>
 
 <div class="wrapper">
@@ -10,7 +11,7 @@ require('../db/dbconn.php');
          <div class="container-fluid">
             <div class="row mb-2">
                <div class="col-sm-6">
-                  <h1 class="m-0">Employee Page</h1>
+                  <h1 class="m-0">Employee's Page</h1>
                </div>
             </div>
          </div>
@@ -22,7 +23,7 @@ require('../db/dbconn.php');
             <div class="row">
                <div class="col-sm-1"></div>
                <div class="col-sm-10">
-                  
+
                </div>
                <div class="col-sm-1"></div>
             </div>

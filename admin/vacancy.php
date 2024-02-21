@@ -1,7 +1,8 @@
 <?php include('partials/_header.php');
+require('../db/dbconn.php');
+include('partials/_session.php');
 include('partials/_navbar.php');
 include('partials/_sidebar.php');
-require('../db/dbconn.php');
 ?>
 
 <div class="wrapper">
