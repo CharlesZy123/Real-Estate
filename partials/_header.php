@@ -1,5 +1,7 @@
 <?php
 session_start();
+$path = ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));
+$title = ($path == "Index" || $path == "Piso") ? 'Welcome' : $path;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +10,7 @@ session_start();
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-   <title>PISO | <?php if (basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "index" || basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "piso") { echo 'Welcome'; } else { echo ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))); } ?></title>
+   <title>PISO | <?php echo $title; ?></title>
    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
    <!-- Font Awesome -->
