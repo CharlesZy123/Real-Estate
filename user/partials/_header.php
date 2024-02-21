@@ -1,7 +1,12 @@
 <?php
 session_start();
+require('../db/dbconn.php');
+$id = $_SESSION['user_id'];
 $path = ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));
 $title = ($path == "Index" || $path == "Piso") ? 'Welcome' : $path;
+$query = "SELECT * FROM users WHERE id = $id";
+$result = mysqli_query($conn, $query);
+$row = $result->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">

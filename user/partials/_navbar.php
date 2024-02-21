@@ -47,5 +47,9 @@ function echoActiveClass($requestUri)
             <?php endif;?>
          </ul>
       </div>
+
+      <ul class="navbar-nav float-right">
+         <li class="nav-item pl-2"><?= $row['username']?></li>
+      </ul>
    </div>
 </nav>
