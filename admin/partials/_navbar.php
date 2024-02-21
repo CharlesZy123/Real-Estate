@@ -37,7 +37,7 @@
          </div>
          <div class="modal-footer justify-content-between">
             <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-            <form id="logout-form" action="logout" method="POST">
+            <form id="logout-form" action="../logout.php" method="POST">
                <button type="submit" class="btn btn-danger">Yes</button>
             </form>
          </div>

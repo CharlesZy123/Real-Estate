@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
    $usernameOrEmail = $_POST['email'];
    $password = $_POST['password'];
+   $dept = $_POST['register'];
 
    if (empty($usernameOrEmail) || empty($password)) {
       $message = base64_encode('danger~Please enter both username/email and password.');
@@ -25,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['user_role'] = $row['role'];
+            $_SESSION['dept'] = $dept;
 
             $message = base64_encode('success~Login successful!');
             header("Location: ../users/dashboard?m=" . $message);
@@ -83,6 +85,7 @@ if (isset($_SESSION['user_id'])) {
                                  </div>
                               </div>
                            </div>
+                           <input type="hidden" name="register">
                            <div class="row">
                               <div class="col-8">
                                  <div class="icheck-primary text-black">

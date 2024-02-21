@@ -1,5 +1,11 @@
 <?php
 session_start();
+if(isset($_SESSION['dept'])){
+
+} else {
+   header("Location: login");
+   exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
