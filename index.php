@@ -2,7 +2,10 @@
 include('partials/_header.php');
 include('partials/_navbar.php');
 if (isset($_SESSION['user_id'])) {
-   header("Location: user/dashboard.php");
+   if (isset($_SESSION['user_id'])) {
+      $_SESSION['key'] = true;
+   }
+   header("Location: user/dashboard");
 }
 ?>
 <div class="content-wrapper" style="background-image: url('assets/img/background.jpg');background-repeat: no-repeat; background-position: center;">

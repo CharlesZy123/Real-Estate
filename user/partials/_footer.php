@@ -39,20 +39,20 @@
 </div>
 
 <!-- jQuery -->
-<script src="assets/adminlte/plugins/jquery/jquery.min.js"></script>
+<script src="../assets/adminlte/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="assets/adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Vendor JS Files -->
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/php-email-form/validate.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- SweetAlert2 -->
-<script src="assets/adminlte/plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="../assets/adminlte/plugins/sweetalert2/sweetalert2.min.js"></script>
 <!-- Toastr -->
-<script src="assets/adminlte/plugins/toastr/toastr.min.js"></script>
+<script src="../assets/adminlte/plugins/toastr/toastr.min.js"></script>
 <!-- AdminLTE App -->
-<script src="assets/adminlte/dist/js/adminlte.min.js"></script>
+<script src="../assets/adminlte/dist/js/adminlte.min.js"></script>
 <script>
    $(function() {
       <?php
@@ -68,9 +68,36 @@
             echo 'toastr.error("' . $message . '");';
          }
       }
+
+      $key = isset($_GET['key']);
+
+      if ($key != null) {
+         $_SESSION["key"] = true;
+      }
       ?>
    });
 </script>
+<div class="modal fade" id="modal-logout">
+   <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">Logging Out?</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <p>Are you sure you want to Logout?</p>
+         </div>
+         <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+            <form id="logout-form" action="../logout.php" method="POST">
+               <button type="submit" class="btn btn-danger">Yes</button>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
 </body>
 
 </html>

@@ -18,16 +18,16 @@ $title = ($path == "Index" || $path == "Piso") ? 'Welcome' : $path;
 
    <!-- Google Fonts -->
    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+   <!-- SweetAlert2 -->
+   <link rel="stylesheet" href="assets/adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+   <!-- Toastr -->
+   <link rel="stylesheet" href="assets/adminlte/plugins/toastr/toastr.min.css">
    <!-- Vendor CSS Files -->
    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-   <!-- SweetAlert2 -->
-   <link rel="stylesheet" href="assets/adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-   <!-- Toastr -->
-   <link rel="stylesheet" href="assets/adminlte/plugins/toastr/toastr.min.css">
    <!-- Template Main CSS File -->
    <link href="assets/css/style.css" rel="stylesheet">
    <link href="assets/adminlte/dist/css/adminlte.min.css" rel="stylesheet">

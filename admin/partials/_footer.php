@@ -1,5 +1,8 @@
-</div>
+<?php
+$current_page = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+?>
 <!-- Main Footer -->
+<?php if ($current_page != 'login') {?>
 <footer class="main-footer">
    <strong>Copyright &copy; 2024-2025 <a href="#">PISO</a>.</strong>
    All rights reserved.
@@ -7,6 +10,7 @@
       <b>Version</b> 1.0.0
    </div>
 </footer>
+<?php }?>
 
 <!-- jQuery -->
 <script src="../assets/adminlte/plugins/jquery/jquery.min.js"></script>

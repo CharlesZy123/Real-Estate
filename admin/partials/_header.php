@@ -1,11 +1,24 @@
 <?php
 session_start();
-if(isset($_SESSION['dept'])){
-
-} else {
-   header("Location: login");
-   exit();
+if(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) != "login"){
+   if(isset($_SESSION['dept'])){
+      
+   } else {
+      header("Location: login");
+      exit();
+   }
 }
+
+function echoSideBarClass() {
+   $current_page = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+
+   if($current_page == 'login'){
+      echo 'login-page';
+   } else {
+      echo 'sidebar-mini layout-fixed';
+   }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,5 +45,4 @@ if(isset($_SESSION['dept'])){
    <link href="../assets/adminlte/dist/css/adminlte.min.css" rel="stylesheet">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
-   <div class="wrapper">
+<body class="hold-transition <?php echoSideBarClass(); ?>">
