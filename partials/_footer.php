@@ -38,11 +38,12 @@
 </footer>
 </div>
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 <!-- jQuery -->
 <script src="assets/adminlte/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="assets/adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Vendor JS Files -->
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>

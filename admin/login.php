@@ -11,12 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit();
    }
 
-   if (empty($dept)) {
-      $message = base64_encode('danger~Please select a department.');
-      header("Location: login?m=" . $message);
-      exit();
-   }
-
    $query = "SELECT * FROM staff WHERE username = '$usernameOrEmail' OR email = '$usernameOrEmail'";
    $result = $conn->query($query);
 
@@ -29,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['admin_id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['user_role'] = $row['role'];
+            $_SESSION['dept'] = $dept;
 
             $message = base64_encode('success~Login successful!');
             header("Location: dashboard?m=" . $message);
@@ -52,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $conn->close();
 }
 
-if (isset($_SESSION['admin_id'])) {
+if (isset($_SESSION['admin_id']) && $_SESSION['dept'] == 4) {
    header("Location: admin/dashboard");
 }
 
@@ -73,7 +68,8 @@ $result = mysqli_query($conn, $query);
                   <div class="card card-outline">
                      <div class="card-body m-2">
                         <form action="" method="post">
-                        <p class="login-box-msg">Sign in as Administrator</p>
+                           <p class="login-box-msg">Sign in as Administrator</p>
+                           <input type="hidden" class="form-control" name="dept" value="4">
                            <div class="input-group mb-3">
                               <input type="text" class="form-control" placeholder="Email or username" name="email">
                               <div class="input-group-append">

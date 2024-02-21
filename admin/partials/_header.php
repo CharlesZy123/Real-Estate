@@ -8,7 +8,7 @@ session_start();
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-   <title>PISO | <?php if (basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "index" || basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "piso") { echo 'Welcome'; } else { echo ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))); } ?></title>
+   <title>PISO | Admin - <?php if (basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "index" || basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "piso") { echo 'Welcome'; } else { echo ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))); } ?></title>
    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
    <!-- Font Awesome -->
@@ -20,9 +20,11 @@ session_start();
    <link rel="stylesheet" href="../assets/adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
    <!-- Toastr -->
    <link rel="stylesheet" href="../assets/adminlte/plugins/toastr/toastr.min.css">
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
    <!-- Template Main CSS File -->
    <link href="../assets/adminlte/dist/css/adminlte.min.css" rel="stylesheet">
 </head>
 
-<body class="hold-transition layout-top-nav">
+<body class="hold-transition sidebar-mini layout-fixed">
    <div class="wrapper">
