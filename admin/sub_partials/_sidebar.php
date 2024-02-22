@@ -30,7 +30,7 @@ function echoActiveClass($requestUri)
       <nav class="mt-2">
          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-               <a href="../dashboard" class="nav-link <?= echoActiveClass('dashboard')?>">
+               <a href="../dashboard" class="nav-link <?= echoActiveClass('dashboard') ?>">
                   <i class="nav-icon fas fa-columns mr-2"></i>
                   <p>
                      Dashboard
@@ -38,8 +38,8 @@ function echoActiveClass($requestUri)
                </a>
             </li>
             <li class="nav-item">
-               <a href="../vacancy/" class="nav-link <?= echoActiveClass('vacancy')?>">
-                  <i class="nav-icon fa fa-id-card mr-2" aria-hidden="true"></i>
+               <a href="../vacancy/" class="nav-link <?= echoActiveClass('vacancy') ?>">
+                  <i class="nav-icon fa fa-address-book mr-2" aria-hidden="true"></i>
                   <p>
                      Vacancy
                      <!-- <span class="right badge badge-success">1</span> -->
@@ -47,19 +47,31 @@ function echoActiveClass($requestUri)
                </a>
             </li>
             <li class="nav-item">
-               <a href="employee/" class="nav-link <?= echoActiveClass('employee')?>">
+               <a href="../employer/" class="nav-link <?= echoActiveClass('employee') ?>">
                   <i class="nav-icon fa fa-users mr-2" aria-hidden="true"></i>
                   <p>
-                     Employee
+                     Employer
                   </p>
                </a>
             </li>
             <li class="nav-item">
-               <a href="#" class="nav-link <?= echoActiveClass('applicants')?>">
-                  <i class="nav-icon fa fa-users mr-2" aria-hidden="true"></i>
+               <a href="#" class="nav-link <?= echoActiveClass('applicants') ?>">
+                  <i class="nav-icon fa fa-id-card mr-2" aria-hidden="true"></i>
                   <p>
                      Applicants
                   </p>
+               </a>
+            </li>
+            <li class="nav-item">
+               <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-book-open mr-2" aria-hidden="true"></i>
+                  <p>Category</p>
+               </a>
+            </li>
+            <li class="nav-item">
+               <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-user-lock mr-2" aria-hidden="true"></i>
+                  <p>Manage Users</p>
                </a>
             </li>
             <li class="nav-item">
@@ -71,16 +83,7 @@ function echoActiveClass($requestUri)
                   </p>
                </a>
                <ul class="nav nav-treeview pl-1">
-                  <li class="nav-item">
-                     <a href="#" class="nav-link">
-                        <p>Category</p>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="#" class="nav-link">
-                        <p>Manage Users</p>
-                     </a>
-                  </li>
+
                </ul>
             </li>
          </ul>

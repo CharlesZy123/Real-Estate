@@ -61,4 +61,4 @@ include('../sub_partials/_sidebar.php');
    </div>
 </div>
 
-<?php include('partials/_footer.php') ?>
+<?php include('../sub_partials/_footer.php') ?>
