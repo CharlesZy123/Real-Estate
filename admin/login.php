@@ -11,12 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit();
    }
 
-   $query = "SELECT * FROM users WHERE username = '$usernameOrEmail' OR email = '$usernameOrEmail'";
+   $query = "SELECT * FROM admins WHERE username = '$usernameOrEmail' OR email = '$usernameOrEmail'";
    $result = $conn->query($query);
+   $row = $result->fetch_assoc();
 
-   if ($result->num_rows > 0) {
-      $row = $result->fetch_assoc();
-
+   if ($result->num_rows > 0 && $dept == $row['system_id']) {
       if (password_verify($password, $row['password'])) {
          if ($row['role'] == 1) {
             session_start();
@@ -101,4 +100,4 @@ $result = mysqli_query($conn, $query);
    </div>
 </div>
 
-<?php include('partials/_footer.php')?>
+<?php include('partials/_footer.php') ?>
