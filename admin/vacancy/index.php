@@ -1,8 +1,8 @@
-<?php include('partials/_header.php');
-require('../db/dbconn.php');
-include('partials/_session.php');
-include('partials/_navbar.php');
-include('partials/_sidebar.php');
+<?php include('../sub_partials/_header.php');
+require('../../db/dbconn.php');
+include('../sub_partials/_session.php');
+include('../sub_partials/_navbar.php');
+include('../sub_partials/_sidebar.php');
 ?>
 
 <div class="wrapper">

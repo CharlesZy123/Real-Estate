@@ -30,7 +30,7 @@ function echoActiveClass($requestUri)
       <nav class="mt-2">
          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-               <a href="dashboard" class="nav-link <?= echoActiveClass('dashboard')?>">
+               <a href="../dashboard" class="nav-link <?= echoActiveClass('dashboard')?>">
                   <i class="nav-icon fas fa-columns mr-2"></i>
                   <p>
                      Dashboard
@@ -38,7 +38,7 @@ function echoActiveClass($requestUri)
                </a>
             </li>
             <li class="nav-item">
-               <a href="vacancy" class="nav-link <?= echoActiveClass('vacancy')?>">
+               <a href="../vacancy/" class="nav-link <?= echoActiveClass('vacancy')?>">
                   <i class="nav-icon fa fa-id-card mr-2" aria-hidden="true"></i>
                   <p>
                      Vacancy
