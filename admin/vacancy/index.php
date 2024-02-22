@@ -42,10 +42,10 @@ include('../sub_partials/_sidebar.php');
                            <tbody>
                               <tr>
                                  <td>1</td>
-                                 <td>Lahat</td>
-                                 <td>Ay</td>
-                                 <td>Masakit</td>
-                                 <td>Na</td>
+                                 <td>PISO Employee</td>
+                                 <td>wala lng</td>
+                                 <td>wahahaha</td>
+                                 <td>Bahak</td>
                               </tr>
                            </tbody>
                         </table>

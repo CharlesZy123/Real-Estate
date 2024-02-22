@@ -47,7 +47,7 @@ function echoActiveClass($requestUri)
                </a>
             </li>
             <li class="nav-item">
-               <a href="../employer/" class="nav-link <?= echoActiveClass('employee') ?>">
+               <a href="../employer/" class="nav-link <?= echoActiveClass('employer') ?>">
                   <i class="nav-icon fa fa-users mr-2" aria-hidden="true"></i>
                   <p>
                      Employer

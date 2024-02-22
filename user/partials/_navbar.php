@@ -34,7 +34,7 @@ function echoActiveClass($requestUri)
             </li>
             <?php if(isset($_SESSION['key'])):?>
                <li class="nav-item">
-                  <a class="nav-link pl-2" href="http://localhost/jobhunt/user/dashboard">
+                  <a class="nav-link pl-2" href="../../user/dashboard">
                      <i class="fas fa-sign-out-alt"></i>&nbsp;MainPage</a>
                   </a>
                </li>
