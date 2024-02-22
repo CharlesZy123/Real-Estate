@@ -18,9 +18,10 @@ function echoActiveClass($requestUri)
    <!-- Sidebar -->
    <div class="sidebar">
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-         <!-- <div class="image">
-            <img src="" class="img-circle elevation-2" alt="Admin Image">
-         </div> -->
+         <div class="image mt-1">
+            <!-- <img src="" class="img-circle elevation-2" alt="Admin Image"> -->
+            <i class="fas fa-user-circle elevation-1"></i>
+         </div>
          <div class="info">
             <a href="#" class="d-block">Administrator</a>
          </div>
@@ -47,6 +48,12 @@ function echoActiveClass($requestUri)
                </a>
             </li>
             <li class="nav-item">
+               <a href="../category/" class="nav-link <?= echoActiveClass('category') ?>">
+                  <i class="nav-icon fa fa-book-open mr-2" aria-hidden="true"></i>
+                  <p>Category</p>
+               </a>
+            </li>
+            <li class="nav-item">
                <a href="../employer/" class="nav-link <?= echoActiveClass('employer') ?>">
                   <i class="nav-icon fa fa-users mr-2" aria-hidden="true"></i>
                   <p>
@@ -60,12 +67,6 @@ function echoActiveClass($requestUri)
                   <p>
                      Applicants
                   </p>
-               </a>
-            </li>
-            <li class="nav-item">
-               <a href="#" class="nav-link">
-                  <i class="nav-icon fa fa-book-open mr-2" aria-hidden="true"></i>
-                  <p>Category</p>
                </a>
             </li>
             <li class="nav-item">

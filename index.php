@@ -2,10 +2,15 @@
 include('partials/_header.php');
 include('partials/_navbar.php');
 if (isset($_SESSION['user_id'])) {
-   if (isset($_SESSION['user_id'])) {
-      $_SESSION['key'] = true;
-   }
    header("Location: user/dashboard");
+   exit();
+} elseif(isset($_SESSION['admin_id'])) {
+   if (isset($_GET['m'])) {
+      $message = $_GET['m'];
+      header("Location: admin/dashboard?m=".$message);
+      exit();
+   }
+   header("Location: admin/dashboard");
 }
 ?>
 <div class="content-wrapper" style="background-image: url('assets/img/background.jpg');background-repeat: no-repeat; background-position: center;">

@@ -11,7 +11,7 @@ include('../sub_partials/_sidebar.php');
          <div class="container-fluid">
             <div class="row mb-2">
                <div class="col-sm-6">
-                  <h1 class="m-0">Employee's Page</h1>
+                  <h1 class="m-0">Employer Page</h1>
                </div>
             </div>
          </div>

@@ -58,7 +58,7 @@ $current_page = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
          "paging": true,
          "lengthChange": false,
          "searching": true,
-         "ordering": true,
+         "ordering": false,
          "info": true,
          "autoWidth": false,
          "responsive": true,

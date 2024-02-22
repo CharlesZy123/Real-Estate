@@ -32,7 +32,7 @@ function echoActiveClass($requestUri)
             <li class="nav-item">
                <a class="nav-link pl-2 <?php echoActiveClass(''); ?>" href="#">Profile</a>
             </li>
-            <?php if(isset($_SESSION['key'])):?>
+            <?php if(isset($_SESSION['jobhub'])):?>
                <li class="nav-item">
                   <a class="nav-link pl-2" href="../../user/dashboard">
                      <i class="fas fa-sign-out-alt"></i>&nbsp;MainPage</a>

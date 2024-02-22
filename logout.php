@@ -1,8 +1,13 @@
 <?php
 session_start();
 if (isset($_SESSION['user_id']) || isset($_SESSION['admin_id'])) {
-   session_destroy();
-   header("Location: login");
+   if(isset($_SESSION['admin_id']) && isset($_SESSION['jobhub'])){
+      session_destroy();
+      header("Location: ../admin");
+   } else {
+      session_destroy();
+      header("Location: login");
+   }
    exit();
 } else {
    header("Location: login");
