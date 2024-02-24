@@ -54,7 +54,7 @@ function echoActiveClass($requestUri)
                </a>
             </li>
             <li class="nav-item">
-               <a href="employer/" class="nav-link <?= echoActiveClass('employer') ?>">
+               <a href="employee/" class="nav-link <?= echoActiveClass('employee') ?>">
                   <i class="nav-icon fa fa-users mr-2" aria-hidden="true"></i>
                   <p>
                      Employer
@@ -75,7 +75,7 @@ function echoActiveClass($requestUri)
                   <p>Manage Users</p>
                </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-cogs mr-2"></i>
                   <p>
@@ -86,7 +86,7 @@ function echoActiveClass($requestUri)
                <ul class="nav nav-treeview pl-1">
 
                </ul>
-            </li>
+            </li> -->
          </ul>
       </nav>
    </div>

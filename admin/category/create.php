@@ -50,6 +50,7 @@ include('../sub_partials/_sidebar.php');
                            </div>
                         </div>
                         <div class="card-footer">
+                           <a href="../category/" class="btn btn-secondary">Cancel</a>
                            <button type="submit" class="btn btn-primary float-right">Save</button>
                         </div>
                      </form>
