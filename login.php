@@ -1,12 +1,12 @@
 <?php include('partials/_header.php');
 include('partials/_navbar.php');
 
+require('db/dbconn.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   require('db/dbconn.php');
 
    $usernameOrEmail = $_POST['email'];
    $password = $_POST['password'];
-   $dept = $_POST['register'];
+   $sysId = $_POST['registered'];
 
    if (empty($usernameOrEmail) || empty($password)) {
       $message = base64_encode('danger~Please enter both username/email and password.');
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $result = $conn->query($query);
 
    if ($result->num_rows > 0) {
-      $row = $result->fetch_assoc();
+      $row = mysqli_fetch_assoc($result);
 
       if (password_verify($password, $row['password'])) {
          if ($row['role'] == 2) {
@@ -26,7 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['user_role'] = $row['role'];
-            $_SESSION['dept'] = $dept;
+            $_SESSION['dept'] = $row['sysId'];
+            $_SESSION['sys_true'] = true;
 
             $message = base64_encode('success~Login successful!');
             header("Location: user/dashboard?m=" . $message);
@@ -50,7 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $conn->close();
 }
 
-if (isset($_SESSION['user_id'])) {
+$query = "SELECT * FROM systems WHERE name = 'PISO' LIMIT 1";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+
+if (isset($_SESSION['user_id']) && isset($_SESSION['sys_true'])) {
    header("Location: user/dashboard");
 }
 ?>
@@ -69,6 +74,7 @@ if (isset($_SESSION['user_id'])) {
                      <div class="card-body">
                         <p class="login-box-msg text-black">Sign in to start your application!</p>
                         <form action="" method="post">
+                           <input type="hidden" name="registered" value="<?= $row['id']?>">
                            <div class="input-group mb-3">
                               <input type="text" class="form-control" placeholder="Email or username" name="email">
                               <div class="input-group-append">
@@ -85,7 +91,6 @@ if (isset($_SESSION['user_id'])) {
                                  </div>
                               </div>
                            </div>
-                           <input type="hidden" name="register">
                            <div class="row">
                               <div class="col-8">
                                  <div class="icheck-primary text-black">

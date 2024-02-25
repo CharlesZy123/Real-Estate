@@ -23,14 +23,11 @@ function echoActiveClass($requestUri)
             <li class="nav-item pl-2 <?php echoActiveClass('dashboard')?>">
                <a class="nav-link" href="dashboard">Dashboard</a>
             </li>
-            <li class="nav-item">
-               <a class="nav-link pl-2 <?php echoActiveClass(''); ?>" href="#">Job Vacancy</a>
+            <li class="nav-item <?php echoActiveClass('job-vacancy') || echoActiveClass('job-list')?>">
+               <a class="nav-link pl-2" href="job-vacancy">Job Vacancy</a>
             </li>
-            <li class="nav-item">
-               <a class="nav-link pl-2 <?php echoActiveClass(''); ?>" href="#">Category</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link pl-2 <?php echoActiveClass(''); ?>" href="#">Profile</a>
+            <li class="nav-item <?php echoActiveClass(''); ?>">
+               <a class="nav-link pl-2" href="#">Profile</a>
             </li>
             <?php if(isset($_SESSION['jobhub'])):?>
                <li class="nav-item">

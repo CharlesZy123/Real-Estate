@@ -1,12 +1,17 @@
 <?php
 session_start();
 require('../db/dbconn.php');
-$id = $_SESSION['user_id'];
-$path = ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));
-$title = ($path == "Index" || $path == "Piso") ? 'Welcome' : $path;
-$query = "SELECT * FROM users WHERE id = $id";
-$result = mysqli_query($conn, $query);
-$row = $result->fetch_assoc();
+if (!isset($_SESSION['user_id']) || !isset($_SESSION['sys_true'])) {
+   header("Location: ../login");
+} else {
+   $id = $_SESSION['user_id'];
+   $path = ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));
+   $title = ($path == "Index" || $path == "Piso") ? 'Welcome' : $path;
+
+   $query = "SELECT * FROM users WHERE id = $id";
+   $result = mysqli_query($conn, $query);
+   $row = $result->fetch_assoc();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +32,10 @@ $row = $result->fetch_assoc();
    <link rel="stylesheet" href="../assets/adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
    <!-- Toastr -->
    <link rel="stylesheet" href="../assets/adminlte/plugins/toastr/toastr.min.css">
+   <!-- DataTables -->
+   <link rel="stylesheet" href="../assets/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+   <link rel="stylesheet" href="../assets/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+   <link rel="stylesheet" href="../assets/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
    <!-- Vendor CSS Files -->
    <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
    <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">

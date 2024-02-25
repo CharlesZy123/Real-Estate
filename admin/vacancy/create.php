@@ -4,6 +4,7 @@ require('../../db/dbconn.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $id = $_POST['id'];
    $job = $_POST['job'];
+   $vacant = $_POST['vacant'];
    $desc = $_POST['desc'];
    $category = $_POST['category'];
    
@@ -13,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit();
    }
 
-   $insertUserQuery = "INSERT INTO vacancies (system_id, job, description, category_id) VALUES ('$id', '$job', '$desc', '$category')";
+   $insertUserQuery = "INSERT INTO vacancies (system_id, job, description, vacancy, category_id) VALUES ('$id', '$job', '$desc', '$vacant','$category')";
 
    if (mysqli_query($conn, $insertUserQuery)) {
       $message = base64_encode('success~Job vacancy ' . $job . ' successfully added!');
@@ -63,6 +64,12 @@ include('../sub_partials/_sidebar.php');
                                        <option value="<?= $row['id']?>"><?= $row['name']?></option>
                                     <?php endforeach;?>
                                  </select>
+                              </div>
+                              <div class="col-sm-6">
+                                 <div class="input-group ml-2 mb-4">
+                                    <label class="mt-2 mr-3">Vacancy:</label>
+                                    <input type="number" class="form-control mr-3" name="vacant" required>
+                                 </div>
                               </div>
                               <div class="col-sm-12">
                                  <label for="description">Description:</label>

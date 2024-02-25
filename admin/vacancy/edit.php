@@ -4,16 +4,17 @@ require('../../db/dbconn.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $id = $_POST['id'];
    $job = $_POST['job'];
+   $vacancy = $_POST['vacant'];
    $desc = $_POST['desc'];
    $category = $_POST['category'];
-   
+
    if (empty($category) || empty($desc)) {
       $message = base64_encode('danger~All fields are required.');
-      header("Location: edit?id=".$id."&m=".$message);
+      header("Location: edit?id=" . $id . "&m=" . $message);
       exit();
    }
-   
-   $updateQuery = "UPDATE vacancies SET job = '$job', description = '$desc', category_id = '$category' WHERE id = '$id'";
+
+   $updateQuery = "UPDATE vacancies SET job = '$job', description = '$desc', vacancy = '$vacancy', category_id = '$category' WHERE id = '$id'";
 
    if (mysqli_query($conn, $updateQuery)) {
       $message = base64_encode('success~Successfully updated!');
@@ -61,8 +62,8 @@ include('../sub_partials/_sidebar.php');
                               <div class="col-sm-6">
                                  <div class="input-group ml-2 mb-4">
                                     <label class="mt-2 mr-3">Job:</label>
-                                    <input type="text" class="form-control mr-3" name="job" value="<?= $row['job']?>" required>
-                                    <input type="hidden" class="form-control mr-3" name="id" value="<?= $row['id']?> required">
+                                    <input type="text" class="form-control mr-3" name="job" value="<?= $row['job'] ?>" required>
+                                    <input type="hidden" class="form-control mr-3" name="id" value="<?= $row['id'] ?> required">
                                  </div>
                               </div>
                               <div class="col-sm-6">
@@ -73,9 +74,15 @@ include('../sub_partials/_sidebar.php');
                                     <?php endforeach; ?>
                                  </select>
                               </div>
+                              <div class="col-sm-6">
+                                 <div class="input-group ml-2 mb-4">
+                                    <label class="mt-2 mr-3">Vacancy:</label>
+                                    <input type="number" class="form-control mr-3" name="vacant" value="<?= $row['vacancy'] ?>" required>
+                                 </div>
+                              </div>
                               <div class="col-sm-12">
                                  <label for="description">Description:</label>
-                                 <textarea class="form-control" name="desc" cols="30" rows="6" required><?= $row['description']?></textarea>
+                                 <textarea class="form-control" name="desc" cols="30" rows="6" required><?= $row['description'] ?></textarea>
                               </div>
                            </div>
                         </div>

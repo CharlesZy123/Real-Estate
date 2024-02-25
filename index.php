@@ -2,6 +2,11 @@
 include('partials/_header.php');
 include('partials/_navbar.php');
 if (isset($_SESSION['user_id'])) {
+   if (isset($_GET['m'])) {
+      $message = $_GET['m'];
+      header("Location: user/dashboard?m=".$message);
+      exit();
+   }
    header("Location: user/dashboard");
    exit();
 } elseif(isset($_SESSION['admin_id'])) {

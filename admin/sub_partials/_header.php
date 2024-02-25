@@ -1,16 +1,17 @@
 <?php
 session_start();
-if(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) != "login"){
-   if(!isset($_SESSION['admin_id'])){
+if (basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) != "login") {
+   if (!isset($_SESSION['admin_id'])) {
       header("Location: login");
       exit();
    }
 }
 
-function echoSideBarClass() {
+function echoSideBarClass()
+{
    $current_page = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
-   if($current_page == 'login'){
+   if ($current_page == 'login') {
       echo 'login-page';
    } else {
       echo 'sidebar-mini layout-fixed';
@@ -25,7 +26,11 @@ function echoSideBarClass() {
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-   <title>PISO | Admin - <?php if (basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "index" || basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "piso") { echo 'Welcome'; } else { echo ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))); } ?></title>
+   <title>PISO | Admin - <?php if (basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "index" || basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "piso") {
+                              echo 'Welcome';
+                           } else {
+                              echo ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));
+                           } ?></title>
    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
    <link href="../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
    <!-- Font Awesome -->
@@ -34,9 +39,9 @@ function echoSideBarClass() {
    <!-- Google Fonts -->
    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
    <!-- DataTables -->
-  <link rel="stylesheet" href="../../assets/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../assets/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../assets/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+   <link rel="stylesheet" href="../../assets/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+   <link rel="stylesheet" href="../../assets/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+   <link rel="stylesheet" href="../../assets/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
    <!-- SweetAlert2 -->
    <link rel="stylesheet" href="../../assets/adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
    <!-- Toastr -->

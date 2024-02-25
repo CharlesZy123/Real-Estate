@@ -23,8 +23,7 @@ $result = mysqli_query($conn, $query);
       <section class="content">
          <div class="container-fluid">
             <div class="row">
-               <div class="col-sm-1"></div>
-               <div class="col-sm-10">
+               <div class="col-sm-12">
                   <div class="card">
                      <div class="card-header">
                         <a href="create" class="btn btn-primary float-right"><i class="fas fa-plus mr-1"></i> New Vacancies</a>
@@ -38,6 +37,7 @@ $result = mysqli_query($conn, $query);
                                  <th>Job</th>
                                  <th>Description</th>
                                  <th>Category</th>
+                                 <th>Vacancy</th>
                                  <th>Action</th>
                               </tr>
                            </thead>
@@ -48,6 +48,7 @@ $result = mysqli_query($conn, $query);
                                     <td class="pl-5 pr-5"><?= $row['job'] ?></td>
                                     <td><?= $row['description'] ?></td>
                                     <td class="text-sm"><?= $row['name'] ?></td>
+                                    <td class="text-sm"><?= $row['vacancy'] ?></td>
                                     <td class="text-sm">
                                        <a href="edit?id=<?= $row['id'] ?>" class="btn btn-info m-1">
                                           <i class="fas fa-edit"></i>
@@ -63,7 +64,6 @@ $result = mysqli_query($conn, $query);
                      </div>
                   </div>
                </div>
-               <div class="col-sm-1"></div>
             </div>
             <!-- /.row -->
          </div>
