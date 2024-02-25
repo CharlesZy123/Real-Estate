@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    mysqli_close($conn);
 }
 
-$query = "SELECT * FROM systems WHERE name = 'PISO' LIMIT 1";
+$query = "SELECT * FROM systems WHERE name = 'Real Estate' LIMIT 1";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
 
@@ -63,9 +63,9 @@ if (isset($_SESSION['user_id'])) {
             <div class="row">
                <div class="col-sm-4"></div>
                <div class="col-sm-4 mt-2 mb-3">
-                  <div class="card card-outline card-primary">
+                  <div class="card card-outline card-primary bg-dark">
                      <div class="card-body mb-2">
-                        <h3 class="login-box-msg  text-black">Register Form</h3>
+                        <h3 class="login-box-msg">Register Form</h3>
                         <form action="" method="post">
                            <div class="input-group mb-3">
                               <input type="text" class="form-control" placeholder="Firstname" name="fname" required>
@@ -116,13 +116,13 @@ if (isset($_SESSION['user_id'])) {
                               </div>
                            </div>
                            <div class="row">
+                              <input type="hidden" name="register" value="<?= $row['id']?>" required>
                               <div class="col-2"></div>
                               <div class="col-8 mt-2">
-                                 <button type="submit" class="btn btn-primary btn-block">Register</button>
+                                 <button type="submit" class="btn btn-secondary btn-block">Register</button>
                               </div>
                               <div class="col-2"></div>
                            </div>
-                           <input type="hidden" name="register" value="<?= $row['id']?>" required>
                         </form>
                      </div>
                   </div>

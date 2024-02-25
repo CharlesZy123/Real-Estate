@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $conn->close();
 }
 
-$query = "SELECT * FROM systems WHERE name = 'PISO' LIMIT 1";
+$query = "SELECT * FROM systems WHERE name = 'Real Estate' LIMIT 1";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
 
@@ -60,7 +60,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['sys_true'])) {
 }
 ?>
 
-<div class="content-wrapper" style="background-image: url('assets/img/background2.jpg');background-repeat: no-repeat; background-position: center;">
+<div class="content-wrapper" style="background-image: url('assets/img/background2.jpg');background-repeat: no-repeat;background-position: center;background-size: cover;">
    <main id="main">
       <section class="content section-t8">
          <div class="container-fluid">
@@ -68,11 +68,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['sys_true'])) {
                <div class="col-sm-4"></div>
                <div class="col-sm-4 mt-4 mb-3">
                   <div class="text-center mb-3">
-                     <a class="h1 text-white" href="index" style="text-shadow: 3px 2px black;">PISO</a>
+                     <a class="h1 text-white" href="index" style="text-shadow: 3px 2px black;">Real Estate</a>
                   </div>
-                  <div class="card card-outline card-primary">
+                  <div class="card card-outline card-primary bg-dark">
                      <div class="card-body">
-                        <p class="login-box-msg text-black">Sign in to start your application!</p>
+                        <p class="login-box-msg">Sign in to start your application!</p>
                         <form action="" method="post">
                            <input type="hidden" name="registered" value="<?= $row['id']?>">
                            <div class="input-group mb-3">
@@ -95,16 +95,16 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['sys_true'])) {
                               <div class="col-8">
                                  <div class="icheck-primary text-black">
                                     <input type="checkbox" id="remember">
-                                    <label for="remember">
+                                    <label for="remember" class="text-white">
                                        Remember Me
                                     </label>
                                  </div>
                               </div>
                               <div class="col-4">
-                                 <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                                 <button type="submit" class="btn btn-warning btn-block">Sign In</button>
                               </div>
                               <div class="col-12">
-                                 <a href="admin/login">Sign in as Admin</a>
+                                 <a href="admin/login" class="text-white">Sign in as Admin</a>
                               </div>
                            </div>
                         </form>

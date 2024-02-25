@@ -1,7 +1,7 @@
 <?php
 session_start();
 $path = ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));
-$title = ($path == "Index" || $path == "Piso") ? 'Welcome' : $path;
+$title = ($path == "Index" || $path == "Real-estate") ? 'Welcome' : $path;
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,4 +1,4 @@
-<footer class="bg-light">
+<footer class="bg-dark">
    <div class="container">
       <div class="row">
          <div class="col-md-12">
@@ -27,9 +27,9 @@
                </ul>
             </div>
             <div class="copyright-footer">
-               <p class="copyright color-text-a">
+               <p class="copyright text-white">
                   &copy; Copyright
-                  <span class="color-a">PISO</span> All Rights Reserved.
+                  <b>Real Estate</b> All Rights Reserved.
                </p>
             </div>
          </div>
