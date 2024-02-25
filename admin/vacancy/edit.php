@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit();
    }
 
-   $updateQuery = "UPDATE vacancies SET job = '$job', description = '$desc', vacancy = '$vacancy', category_id = '$category' WHERE id = '$id'";
+   $updateQuery = "UPDATE jobs SET job = '$job', description = '$desc', vacancy = '$vacancy', category_id = '$category' WHERE id = '$id'";
 
    if (mysqli_query($conn, $updateQuery)) {
       $message = base64_encode('success~Successfully updated!');
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 if (isset($_GET['id'])) {
    $id = $_GET['id'];
-   $query = "SELECT * FROM vacancies WHERE id = '$id'";
+   $query = "SELECT * FROM jobs WHERE id = '$id'";
    $result = mysqli_query($conn, $query);
    $row = $result->fetch_assoc();
 

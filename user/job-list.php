@@ -5,7 +5,7 @@ include('partials/_navbar.php');
 if (isset($_GET['id'])) {
    $id = $_GET['id'];
    $sysId = $_SESSION['dept'];
-   $query2 = "SELECT * FROM vacancies WHERE category_id = $id AND system_id = $sysId";
+   $query2 = "SELECT * FROM jobs WHERE category_id = $id AND system_id = $sysId";
    $results = mysqli_query($conn, $query2);
 
    $data = "SELECT * FROM categories WHERE id = $id AND system_id = $sysId";

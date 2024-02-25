@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit();
    }
 
-   $insertUserQuery = "INSERT INTO vacancies (system_id, job, description, vacancy, category_id) VALUES ('$id', '$job', '$desc', '$vacant','$category')";
+   $insertUserQuery = "INSERT INTO jobs (system_id, job, description, vacancy, category_id) VALUES ('$id', '$job', '$desc', '$vacant','$category')";
 
    if (mysqli_query($conn, $insertUserQuery)) {
       $message = base64_encode('success~Job vacancy ' . $job . ' successfully added!');
@@ -45,7 +45,7 @@ include('../sub_partials/_sidebar.php');
                <div class="col-sm-8">
                   <div class="card mt-5">
                      <div class="card-header">
-                        <h5 class="mt-1">Add Vacancies</h5>
+                        <h5 class="mt-1">Add Jobs</h5>
                      </div>
                      <form action="" method="post">
                         <div class="card-body">

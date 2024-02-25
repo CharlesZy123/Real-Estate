@@ -6,9 +6,9 @@ $sysId = $_SESSION['dept'];
 $query2 = "SELECT * FROM categories WHERE system_id = $sysId";
 $results = mysqli_query($conn, $query2);
 
-function countVacanciesByCategoryId($conn, $id, $sysId)
+function countJobsByCategoryId($conn, $id, $sysId)
 {
-   $query = "SELECT * FROM vacancies WHERE category_id = $id AND system_id = $sysId";
+   $query = "SELECT * FROM jobs WHERE category_id = $id AND system_id = $sysId";
    $result = mysqli_query($conn, $query);
 
    if ($result) {
@@ -40,7 +40,7 @@ function countVacanciesByCategoryId($conn, $id, $sysId)
                            <div class="info-box-content">
                               <h4 class="text-center mt-2 mb-2"><?= $cat['name'] ?></h4>
                               <span class="progress-description text-center">
-                                 Available Jobs: <b><?= countVacanciesByCategoryId($conn,  $cat['id'], $sysId) ?></b>
+                                 Available Jobs: <b><?= countJobsByCategoryId($conn,  $cat['id'], $sysId) ?></b>
                               </span>
                            </div>
                         </div>

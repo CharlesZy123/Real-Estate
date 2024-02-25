@@ -3,7 +3,7 @@ require('../../db/dbconn.php');
 include('../sub_partials/_navbar.php');
 include('../sub_partials/_sidebar.php');
 
-$query = "SELECT * FROM categories JOIN vacancies ON categories.id=vacancies.category_id";
+$query = "SELECT * FROM categories JOIN jobs ON categories.id=jobs.category_id";
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -27,7 +27,7 @@ $result = mysqli_query($conn, $query);
                   <div class="card">
                      <div class="card-header">
                         <a href="create" class="btn btn-primary float-right"><i class="fas fa-plus mr-1"></i> New Vacancies</a>
-                        <h5 class="mt-1">Vacancy List</h5>
+                        <h5 class="mt-1">Job Vacancy List</h5>
                      </div>
                      <div class="card-body">
                         <table id="table" class="table table-bordered table-striped text-center">
