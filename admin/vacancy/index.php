@@ -3,7 +3,8 @@ require('../../db/dbconn.php');
 include('../sub_partials/_navbar.php');
 include('../sub_partials/_sidebar.php');
 
-$query = "SELECT * FROM categories JOIN jobs ON categories.id=jobs.category_id";
+$id = $_SESSION['dept'];
+$query = "SELECT jobs.*, jobs.id AS job_id, categories.* FROM jobs JOIN categories ON categories.id=jobs.category_id";
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -50,7 +51,7 @@ $result = mysqli_query($conn, $query);
                                     <td class="text-sm"><?= $row['name'] ?></td>
                                     <td class="text-sm"><?= $row['vacancy'] ?></td>
                                     <td class="text-sm">
-                                       <a href="edit?id=<?= $row['id'] ?>" class="btn btn-info m-1">
+                                       <a href="edit?id=<?= $row['job_id'] ?>" class="btn btn-info m-1">
                                           <i class="fas fa-edit"></i>
                                        </a>
                                        <a href="#" class="btn btn-danger m-1">

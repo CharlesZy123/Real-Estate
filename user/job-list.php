@@ -5,7 +5,7 @@ include('partials/_navbar.php');
 if (isset($_GET['id'])) {
    $id = $_GET['id'];
    $sysId = $_SESSION['dept'];
-   $query2 = "SELECT * FROM jobs WHERE category_id = $id AND system_id = $sysId";
+   $query2 = "SELECT * FROM jobs WHERE category_id = $id AND vacancy !=0 AND system_id = $sysId";
    $results = mysqli_query($conn, $query2);
 
    $data = "SELECT * FROM categories WHERE id = $id AND system_id = $sysId";
@@ -25,7 +25,13 @@ if (isset($_GET['id'])) {
          if(!$eh){
             return 0;
          } else {
-            return $eh['id'];
+            if($eh['status'] == 2){
+               return 2;
+            } elseif($eh['status'] == 1){
+               return 1;
+            } else {
+               return $eh['id'];
+            }
          }
       } else {
          return 0;
@@ -76,6 +82,14 @@ if (isset($_GET['id'])) {
                                           <a href="#" class="btn btn-info" role="button" data-toggle="modal" data-target="#modal-apply-<?= $value['id'] ?>">
                                              Apply
                                           </a>
+                                       <?php elseif(checkApplications($conn, $value['id'], $sysId) == 1) : ?>
+                                          <a href="#" class="btn btn-success disabled">
+                                             Accepted
+                                          </a>
+                                       <?php elseif(checkApplications($conn, $value['id'], $sysId) == 2) : ?>
+                                          <a href="#" class="btn btn-secondary disabled">
+                                             Rejected
+                                          </a>
                                        <?php else : ?>
                                           <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-cancel-<?= $value['id'] ?>">
                                              Cancel
@@ -83,6 +97,7 @@ if (isset($_GET['id'])) {
                                        <?php endif; ?>
                                     </td>
                                  </tr>
+
                                  <!-- Modals -->
                                  <div class="modal fade" id="modal-apply-<?= $value['id'] ?>">
                                     <div class="modal-dialog modal-md">
@@ -100,8 +115,8 @@ if (isset($_GET['id'])) {
                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                              <form action="manage-application" method="POST">
                                                 <input type="hidden" name="type" value="1">
+                                                <input type="hidden" name="categoryId" value="<?= $row['id'] ?>">
                                                 <input type="hidden" name="jobId" value="<?= $value['id'] ?>">
-                                                <input type="hidden" name="vacancy" value="<?= $value['vacancy'] - 1 ?>">
                                                 <button type="submit" class="btn btn-primary">Apply</button>
                                              </form>
                                           </div>
@@ -125,9 +140,9 @@ if (isset($_GET['id'])) {
                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                              <form action="manage-application" method="POST">
                                                 <input type="hidden" name="type" value="0">
+                                                <input type="hidden" name="categoryId" value="<?= $row['id'] ?>">
                                                 <input type="hidden" name="id" value="<?= checkApplications($conn, $value['id'], $sysId)?>">
                                                 <input type="hidden" name="jobId" value="<?= $value['id'] ?>">
-                                                <input type="hidden" name="vacancy" value="<?= $value['vacancy'] + 1 ?>">
                                                 <button type="submit" class="btn btn-danger">Yes</button>
                                              </form>
                                           </div>

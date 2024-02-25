@@ -3,8 +3,7 @@ require('../../db/dbconn.php');
 include('../sub_partials/_navbar.php');
 include('../sub_partials/_sidebar.php');
 
-$id = $_SESSION['sys_id'];
-
+$id = $_SESSION['dept'];
 $query = "SELECT * FROM categories WHERE system_id=$id";
 $result = mysqli_query($conn, $query);
 ?>

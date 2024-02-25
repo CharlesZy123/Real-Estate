@@ -45,17 +45,17 @@ include('../sub_partials/_sidebar.php');
       <section class="content">
          <div class="container-fluid">
             <div class="row">
-               <div class="col-sm-1"></div>
-               <div class="col-sm-10">
+               <div class="col-sm-2"></div>
+               <div class="col-sm-8">
                   <div class="card mt-5">
                      <div class="card-header">
                         <h5 class="mt-1">Edit Category</h5>
                      </div>
                      <form action="" method="post">
                         <div class="card-body">
-                           <div class="row" style="display:flex;justify-content:center;">
+                           <div class="row">
                               <input type="hidden" class="form-control mr-3" name="id" value="<?= $row['id'] ?>" autofocus required>
-                              <div class="col-sm-6">
+                              <div class="col-sm-12">
                                  <div class="input-group ml-2 mb-4">
                                     <label class="mt-2 mr-3">Name:</label>
                                     <input type="text" class="form-control mr-3" name="name" value="<?= $row['name'] ?>" autofocus required>
@@ -70,7 +70,7 @@ include('../sub_partials/_sidebar.php');
                      </form>
                   </div>
                </div>
-               <div class="col-sm-1"></div>
+               <div class="col-sm-2"></div>
             </div>
             <!-- /.row -->
          </div>

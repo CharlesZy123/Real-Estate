@@ -8,7 +8,7 @@ $results = mysqli_query($conn, $query2);
 
 function countJobsByCategoryId($conn, $id, $sysId)
 {
-   $query = "SELECT * FROM jobs WHERE category_id = $id AND system_id = $sysId";
+   $query = "SELECT * FROM jobs WHERE category_id = $id AND vacancy != 0 AND system_id = $sysId";
    $result = mysqli_query($conn, $query);
 
    if ($result) {

@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             session_start();
             $_SESSION['admin_id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
-            $_SESSION['sys_id'] = $row['system_id'];
             $_SESSION['user_role'] = $row['role'];
             $_SESSION['dept'] = $dept;
 
@@ -51,8 +50,9 @@ if (isset($_SESSION['admin_id']) && $_SESSION['dept'] == 4) {
    header("Location: admin/dashboard");
 }
 
-$query = "SELECT * FROM systems";
+$query = "SELECT * FROM systems WHERE name = 'PISO'";
 $result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
 ?>
 
 <div class="login-box">
@@ -63,7 +63,7 @@ $result = mysqli_query($conn, $query);
       <div class="card-body m-2">
          <form action="" method="post">
             <p class="login-box-msg">Sign in as Administrator</p>
-            <input type="hidden" class="form-control" name="dept" value="4">
+            <input type="hidden" class="form-control" name="dept" value="<?= $row['id']?>">
             <div class="input-group mb-3">
                <input type="text" class="form-control" placeholder="Email or username" name="email">
                <div class="input-group-append">

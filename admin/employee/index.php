@@ -2,6 +2,16 @@
 require('../../db/dbconn.php');
 include('../sub_partials/_navbar.php');
 include('../sub_partials/_sidebar.php');
+
+$id = $_SESSION['dept'];
+$query = "SELECT applicants.id AS app_id, jobs.*, jobs.id AS job_id, users.*, categories.*
+          FROM applicants
+          JOIN jobs ON jobs.id = applicants.job_id
+          JOIN users ON users.id = applicants.user_id
+          JOIN categories ON jobs.category_id = categories.id
+          WHERE applicants.system_id = '$id' AND applicants.status = 1";
+
+$result = mysqli_query($conn, $query);
 ?>
 
 <div class="wrapper">
@@ -33,20 +43,24 @@ include('../sub_partials/_sidebar.php');
                                  <th>#</th>
                                  <th>Name</th>
                                  <th>Job</th>
+                                 <th>Category</th>
                                  <th>Action</th>
                               </tr>
                            </thead>
                            <tbody>
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>
-                                    <a href="#" class="btn btn-danger">
-                                       <i class="fas fa-trash"></i>
-                                    </a>
-                                 </td>
-                              </tr>
+                              <?php foreach ($result as $key => $row) : ?>
+                                 <tr>
+                                    <td class="p-4"><?= $key + 1 ?></td>
+                                    <td class="p-4"><?= $row['lastname'] ?>, <?= $row['firstname'] ?></td>
+                                    <td class="p-4"><?= $row['job'] ?></td>
+                                    <td class="p-4"><?= $row['name'] ?></td>
+                                    <td>
+                                       <a href="#" class="btn btn-danger m-1">
+                                          Remove
+                                       </a>
+                                    </td>
+                                 </tr>
+                              <?php endforeach; ?>
                            </tbody>
                         </table>
                      </div>
