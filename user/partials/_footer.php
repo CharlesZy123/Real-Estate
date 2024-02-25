@@ -60,6 +60,7 @@
       </div>
    </div>
 </div>
+<!-- End of Modals -->
 
 <!-- jQuery -->
 <script src="../assets/adminlte/plugins/jquery/jquery.min.js"></script>

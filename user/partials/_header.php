@@ -25,7 +25,6 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['sys_true'])) {
    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
    <!-- Font Awesome -->
    <link rel="stylesheet" href="../assets/adminlte/plugins/fontawesome-free/css/all.min.css">
-
    <!-- Google Fonts -->
    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
    <!-- SweetAlert2 -->
