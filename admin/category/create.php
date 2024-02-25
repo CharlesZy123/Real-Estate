@@ -45,7 +45,7 @@ include('../sub_partials/_sidebar.php');
                            <div class="input-group ml-2 mb-4">
                               <label class="mt-2 mr-3">Name:</label>
                               <input type="text" class="form-control mr-3" placeholder="Write category here..." name="name" required>
-                              <input type="hidden" class="form-control mr-3" name="id" value="4">
+                              <input type="hidden" class="form-control mr-3" name="id" value="<?= $_SESSION['sys_id']?>">
                            </div>
                         </div>
                         <div class="card-footer">

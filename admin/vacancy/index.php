@@ -1,8 +1,10 @@
 <?php include('../sub_partials/_header.php');
 require('../../db/dbconn.php');
-include('../sub_partials/_session.php');
 include('../sub_partials/_navbar.php');
 include('../sub_partials/_sidebar.php');
+
+$query = "SELECT * FROM categories JOIN vacancies ON categories.id=vacancies.category_id";
+$result = mysqli_query($conn, $query);
 ?>
 
 <div class="wrapper">
@@ -36,15 +38,26 @@ include('../sub_partials/_sidebar.php');
                                  <th>Job</th>
                                  <th>Description</th>
                                  <th>Category</th>
+                                 <th>Action</th>
                               </tr>
                            </thead>
                            <tbody>
-                              <tr>
-                                 <td>1</td>
-                                 <td>PISO Employee</td>
-                                 <td>wala lng</td>
-                                 <td>wahahaha</td>
-                              </tr>
+                              <?php foreach ($result as $key => $row) : ?>
+                                 <tr>
+                                    <td><?= $key + 1 ?></td>
+                                    <td class="pl-5 pr-5"><?= $row['job'] ?></td>
+                                    <td><?= $row['description'] ?></td>
+                                    <td class="text-sm"><?= $row['name'] ?></td>
+                                    <td class="text-sm">
+                                       <a href="edit?id=<?= $row['id'] ?>" class="btn btn-info m-1">
+                                          <i class="fas fa-edit"></i>
+                                       </a>
+                                       <a href="#" class="btn btn-danger m-1">
+                                          <i class="fas fa-trash"></i>
+                                       </a>
+                                    </td>
+                                 </tr>
+                              <?php endforeach; ?>
                            </tbody>
                         </table>
                      </div>

@@ -32,7 +32,7 @@ if (isset($_GET['id'])) {
    $row = $result->fetch_assoc();
 } else {
    $message = base64_encode('danger~Something went wrong!');
-   header("Location: manage-admin?m=" . $message);
+   header("Location: ../category/?m=" . $message);
 }
 
 include('../partials/_navbar.php');

@@ -45,7 +45,7 @@ $result = mysqli_query($conn, $query);
                               <?php foreach ($result as $key => $row) : ?>
                                  <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td>
+                                    <td class="text-sm">
                                        <a href="edit?id=<?= $row['id'] ?>" class="btn btn-info m-1">
                                           <i class="fas fa-edit"></i>
                                        </a>
