@@ -24,7 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    mysqli_close($conn);
 }
 
-include('../sub_partials/_session.php');
 include('../sub_partials/_navbar.php');
 include('../sub_partials/_sidebar.php');
 ?>

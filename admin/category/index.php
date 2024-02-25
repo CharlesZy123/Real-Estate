@@ -1,6 +1,5 @@
 <?php include('../sub_partials/_header.php');
 require('../../db/dbconn.php');
-include('../sub_partials/_session.php');
 include('../sub_partials/_navbar.php');
 include('../sub_partials/_sidebar.php');
 
@@ -40,7 +39,6 @@ $result = mysqli_query($conn, $query);
                                  <th>#</th>
                                  <th>Action</th>
                                  <th>Category</th>
-                                 <th>Employer</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -56,7 +54,6 @@ $result = mysqli_query($conn, $query);
                                        </a>
                                     </td>
                                     <td><?= $row['name'] ?></td>
-                                    <td></td>
                                  </tr>
                               <?php endforeach; ?>
                            </tbody>

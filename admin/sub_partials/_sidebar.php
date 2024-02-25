@@ -57,7 +57,7 @@ function echoActiveClass($requestUri)
                <a href="../employee/" class="nav-link <?= echoActiveClass('employee') ?>">
                   <i class="nav-icon fa fa-users mr-2" aria-hidden="true"></i>
                   <p>
-                     Employer
+                     Employee
                   </p>
                </a>
             </li>

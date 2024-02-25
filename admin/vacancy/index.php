@@ -25,7 +25,7 @@ include('../sub_partials/_sidebar.php');
                <div class="col-sm-10">
                   <div class="card">
                      <div class="card-header">
-                        <a href="#" class="btn btn-primary float-right">Add Vacancies</a>
+                        <a href="create" class="btn btn-primary float-right"><i class="fas fa-plus mr-1"></i> New Vacancies</a>
                         <h5 class="mt-1">Vacancy List</h5>
                      </div>
                      <div class="card-body">
@@ -35,7 +35,6 @@ include('../sub_partials/_sidebar.php');
                                  <th>#</th>
                                  <th>Job</th>
                                  <th>Description</th>
-                                 <th>Employer</th>
                                  <th>Category</th>
                               </tr>
                            </thead>
@@ -45,7 +44,6 @@ include('../sub_partials/_sidebar.php');
                                  <td>PISO Employee</td>
                                  <td>wala lng</td>
                                  <td>wahahaha</td>
-                                 <td>Bahak</td>
                               </tr>
                            </tbody>
                         </table>

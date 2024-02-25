@@ -1,6 +1,5 @@
 <?php include('../sub_partials/_header.php');
 require('../../db/dbconn.php');
-include('../sub_partials/_session.php');
 include('../sub_partials/_navbar.php');
 include('../sub_partials/_sidebar.php');
 ?>
@@ -34,6 +33,7 @@ include('../sub_partials/_sidebar.php');
                                  <th>#</th>
                                  <th>Name</th>
                                  <th>Job</th>
+                                 <th>Action</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -41,7 +41,11 @@ include('../sub_partials/_sidebar.php');
                                  <td></td>
                                  <td></td>
                                  <td></td>
-                                 <td></td>
+                                 <td>
+                                    <a href="#" class="btn btn-danger">
+                                       <i class="fas fa-trash"></i>
+                                    </a>
+                                 </td>
                               </tr>
                            </tbody>
                         </table>

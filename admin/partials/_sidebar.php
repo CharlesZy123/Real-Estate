@@ -1,13 +1,3 @@
-<?php
-function echoActiveClass($requestUri)
-{
-   $current_page = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
-
-   if ($current_page == $requestUri) {
-      echo 'active';
-   }
-}
-?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
    <!-- Brand Logo -->
    <a href="dashboard" class="brand-link">
@@ -31,7 +21,7 @@ function echoActiveClass($requestUri)
       <nav class="mt-2">
          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-               <a href="dashboard" class="nav-link <?= echoActiveClass('dashboard') ?>">
+               <a href="dashboard" class="nav-link active">
                   <i class="nav-icon fas fa-columns mr-2"></i>
                   <p>
                      Dashboard
@@ -39,7 +29,7 @@ function echoActiveClass($requestUri)
                </a>
             </li>
             <li class="nav-item">
-               <a href="vacancy" class="nav-link <?= echoActiveClass('vacancy') ?>">
+               <a href="vacancy" class="nav-link">
                   <i class="nav-icon fa fa-address-book mr-2" aria-hidden="true"></i>
                   <p>
                      Vacancy
@@ -48,21 +38,21 @@ function echoActiveClass($requestUri)
                </a>
             </li>
             <li class="nav-item">
-               <a href="category/" class="nav-link <?= echoActiveClass('category') ?>">
+               <a href="category/" class="nav-link">
                   <i class="nav-icon fa fa-book-open mr-2" aria-hidden="true"></i>
                   <p>Category</p>
                </a>
             </li>
             <li class="nav-item">
-               <a href="employee/" class="nav-link <?= echoActiveClass('employee') ?>">
+               <a href="employee/" class="nav-link">
                   <i class="nav-icon fa fa-users mr-2" aria-hidden="true"></i>
                   <p>
-                     Employer
+                     Employee
                   </p>
                </a>
             </li>
             <li class="nav-item">
-               <a href="#" class="nav-link <?= echoActiveClass('applicants') ?>">
+               <a href="#" class="nav-link">
                   <i class="nav-icon fa fa-id-card mr-2" aria-hidden="true"></i>
                   <p>
                      Applicants
