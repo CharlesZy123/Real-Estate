@@ -1,11 +1,11 @@
-<footer class="bg-light">
+<footer class="bg-dark">
    <div class="container">
       <div class="row">
          <div class="col-md-12">
             <nav class="nav-footer">
                <ul class="list-inline">
                   <li class="list-inline-item">
-                     <a href="index">Home</a>
+                     <a href="index">Dashboard</a>
                   </li>
                   <li class="list-inline-item">
                      <a href="about">About</a>
@@ -27,9 +27,9 @@
                </ul>
             </div>
             <div class="copyright-footer">
-               <p class="copyright color-text-a">
+               <p class="copyright text-white">
                   &copy; Copyright
-                  <span class="color-a">PISO</span> All Rights Reserved.
+                  <b class="text-white">Real Estate</b> All Rights Reserved.
                </p>
             </div>
          </div>

@@ -2,7 +2,7 @@
    <!-- Brand Logo -->
    <a href="dashboard" class="brand-link">
       <i class="fas fa-solid fa-search brand-image mt-2 mr-2 elevation-3"></i>
-      <span class="brand-text font-weight-light">PISO</span>
+      <span class="brand-text font-weight-light">Real-Estate</span>
    </a>
 
    <!-- Sidebar -->

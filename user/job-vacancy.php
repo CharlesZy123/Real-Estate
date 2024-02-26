@@ -2,24 +2,24 @@
 include('partials/_header.php');
 include('partials/_navbar.php');
 
-$sysId = $_SESSION['dept'];
-$query2 = "SELECT * FROM categories WHERE system_id = $sysId";
-$results = mysqli_query($conn, $query2);
+// $sysId = $_SESSION['dept'];
+// $query2 = "SELECT * FROM categories WHERE system_id = $sysId";
+// $results = mysqli_query($conn, $query2);
 
-function countJobsByCategoryId($conn, $id, $sysId)
-{
-   $query = "SELECT * FROM jobs WHERE category_id = $id AND vacancy != 0 AND system_id = $sysId";
-   $result = mysqli_query($conn, $query);
+// function countJobsByCategoryId($conn, $id, $sysId)
+// {
+//    $query = "SELECT * FROM jobs WHERE category_id = $id AND vacancy != 0 AND system_id = $sysId";
+//    $result = mysqli_query($conn, $query);
 
-   if ($result) {
-      $count = mysqli_num_rows($result);
-      mysqli_free_result($result);
-      return $count;
-   } else {
-      return 0;
-   }
-}
-?>
+//    if ($result) {
+//       $count = mysqli_num_rows($result);
+//       mysqli_free_result($result);
+//       return $count;
+//    } else {
+//       return 0;
+//    }
+// }
+// ?>
 <div class="content-wrapper" style="background-image: url('assets/img/background.jpg');background-repeat: no-repeat; background-position: center;">
    <main id="main">
       <section class="content section-t8">
@@ -28,7 +28,7 @@ function countJobsByCategoryId($conn, $id, $sysId)
                <div class="col-sm-12 text-center mb-5">
                   <h3>Select Category</h3>
                </div>
-               <?php
+               <!-- <?php
                $colors = ['primary', 'lightblue', 'info', 'navy', 'olive'];
                $colorIndex = 0;
 
@@ -46,7 +46,7 @@ function countJobsByCategoryId($conn, $id, $sysId)
                         </div>
                      </a>
                   </div>
-               <?php endforeach; ?>
+               <?php endforeach; ?> -->
             </div>
          </div>
       </section>

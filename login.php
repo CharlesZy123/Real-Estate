@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['user_role'] = $row['role'];
-            $_SESSION['dept'] = $row['sysId'];
+            $_SESSION['dept'] = $sysId;
             $_SESSION['sys_true'] = true;
 
             $message = base64_encode('success~Login successful!');

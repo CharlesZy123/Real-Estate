@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['sys_true'])) {
 } else {
    $id = $_SESSION['user_id'];
    $path = ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));
-   $title = ($path == "Index" || $path == "Piso") ? 'Welcome' : $path;
+   $title = ($path == "Index" || $path == "Real-estate") ? 'Welcome' : $path;
 
    $query = "SELECT * FROM users WHERE id = $id";
    $result = mysqli_query($conn, $query);
@@ -20,7 +20,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['sys_true'])) {
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-   <title>PISO | <?php echo $title; ?></title>
+   <title>Real Estate | <?php echo $title; ?></title>
    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
    <!-- Font Awesome -->

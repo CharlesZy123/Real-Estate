@@ -10,7 +10,7 @@ $title = ($path == "Index" || $path == "Real-estate") ? 'Welcome' : $path;
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-   <title>PISO | <?php echo $title; ?></title>
+   <title>Real Estate | <?php echo $title; ?></title>
    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
    <!-- Font Awesome -->

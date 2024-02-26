@@ -25,7 +25,7 @@ function echoSideBarClass() {
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-   <title>PISO | Admin - <?php if (basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "index" || basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "piso") { echo 'Welcome'; } else { echo ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))); } ?></title>
+   <title>Real Estate | Admin - <?php if (basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "index" || basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) == "real-estate") { echo 'Welcome'; } else { echo ucfirst(basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))); } ?></title>
    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
    <!-- Font Awesome -->
